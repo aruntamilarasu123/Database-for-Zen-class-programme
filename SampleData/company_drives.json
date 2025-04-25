@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "680b70173d5f414697c08c8b"
+  },
+  "company": "Google",
+  "date": {
+    "$date": "2020-10-25T00:00:00.000Z"
+  },
+  "students_attended": [
+    {
+      "$oid": "680b690c3d5f414697c08c7c"
+    },
+    {
+      "$oid": "680b697d3d5f414697c08c7d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "680b70173d5f414697c08c8c"
+  },
+  "company": "Wipro",
+  "date": {
+    "$date": "2020-10-25T00:00:00.000Z"
+  },
+  "students_attended": [
+    {
+      "$oid": "680b697d3d5f414697c08c7e"
+    }
+  ]
+}]

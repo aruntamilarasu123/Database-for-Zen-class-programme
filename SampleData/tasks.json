@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "680b6f2f3d5f414697c08c88"
+  },
+  "topic_id": {
+    "$oid": "680b6d2f3d5f414697c08c85"
+  },
+  "task_name": "Mongo DB Task",
+  "submitted": true,
+  "user_id": {
+    "$oid": "680b690c3d5f414697c08c7c"
+  },
+  "date": {
+    "$date": "2020-10-21T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680b6f2f3d5f414697c08c89"
+  },
+  "topic_id": {
+    "$oid": "680b6d2f3d5f414697c08c86"
+  },
+  "task_name": "Javascript Task",
+  "submitted": true,
+  "user_id": {
+    "$oid": "680b697d3d5f414697c08c7d"
+  },
+  "date": {
+    "$date": "2020-10-21T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680b6f2f3d5f414697c08c8a"
+  },
+  "topic_id": {
+    "$oid": "680b6d2f3d5f414697c08c85"
+  },
+  "task_name": "Mongo DB Task",
+  "submitted": false,
+  "user_id": {
+    "$oid": "680b697d3d5f414697c08c7e"
+  },
+  "date": {
+    "$date": "2020-10-21T00:00:00.000Z"
+  }
+}]

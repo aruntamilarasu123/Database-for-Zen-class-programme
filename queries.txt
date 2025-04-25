@@ -1,0 +1,118 @@
+## 🔍 MongoDB Shell Queries & Results
+
+## 1. Find all the topics and tasks which are thought in the month of October
+
+    db.topics.find({ date: { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } })
+    db.tasks.find({ date: { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } })
+
+    ✅ Output:
+        ==> Topics: Mongo DB, JavaScript, React
+        ==> Tasks: Mongo DB Task, JavaScript Task, (1 not submitted)
+
+## 2. Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+
+    db.company_drives.find({ date: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") } })
+
+    ✅ Output:
+        ==> Google (2020-10-25)
+        ==> Wipro (2020-10-25)
+
+## 3. Find all the company drives and students who are appeared for the placement.
+
+    db.company_drives.aggregate([
+      {
+        $lookup: {
+          from: "users",
+          localField: "students_attended",
+          foreignField: "_id",
+          as: "students"
+        }
+      },
+      {
+        $project: {
+          company: 1,
+          date: 1,
+          "students.name": 1,
+          "students.email": 1
+        }
+      }
+    ])
+
+    ✅ Output:
+        ===> Google: Arun, Kiruba
+        ===> Wipro: Susil
+
+## 4. Find the number of problems solved by the user in codekata
+
+    db.codekata.aggregate([
+      {
+        $lookup: {
+          from: "users",
+          localField: "user_id",
+          foreignField: "_id",
+          as: "user"
+        }
+      },
+      { $unwind: "$user" },
+      {
+        $project: {
+          _id: 0,
+          name: "$user.name",
+          email: "$user.email",
+          problems_solved: 1
+        }
+      }
+    ])
+
+    ✅ Output:
+        ===> Arun: 200
+        ===> Kiruba: 190
+        ===> Susil: 180
+
+## 5. Find all the mentors with who has the mentee's count more than 15
+
+    db.mentors.find({
+      $expr: { $gt: [{ $size: "$mentees" }, 15] }
+    })
+
+    ✅ Output:
+        ===> No mentors with > 15 mentees
+
+## 6. Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020 ##
+
+    db.attendance.aggregate([
+      {
+        $match: {
+          present: false,
+          date: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") }
+        }
+      },
+      {
+        $lookup: {
+          from: "tasks",
+          let: { userId: "$user_id" },
+          pipeline: [
+            {
+              $match: {
+                $expr: {
+                  $and: [
+                    { $eq: ["$user_id", "$$userId"] },
+                    { $eq: ["$submitted", false] },
+                    { $gte: ["$date", ISODate("2020-10-15")] },
+                    { $lte: ["$date", ISODate("2020-10-31")] }
+                  ]
+                }
+              }
+            }
+          ],
+          as: "not_submitted_tasks"
+        }
+      },
+      { $match: { "not_submitted_tasks.0": { $exists: true } } },
+      { $count: "absent_and_not_submitted" }
+    ])
+
+    ✅ Output: ===> Count: 0 users
+        * Kiruba (680b697d3d5f414697c08c7d) was absent on 2020-10-18 but did submit a task.
+        * Susil (680b697d3d5f414697c08c7e) was present, but did not submit a task.
+        * So, no one was absent and also didn’t submit a task.

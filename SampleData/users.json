@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "680b690c3d5f414697c08c7c"
+  },
+  "name": "Arun",
+  "email": "dummyone@gmail.com",
+  "mentor_id": {
+    "$oid": "680b70ac3d5f414697c08c8d"
+  },
+  "batch": "FSD-2020"
+},
+{
+  "_id": {
+    "$oid": "680b697d3d5f414697c08c7d"
+  },
+  "name": "Kiruba",
+  "email": "dummytwo@gmail.com",
+  "mentor_id": {
+    "$oid": "680b70ac3d5f414697c08c8d"
+  },
+  "batch": "FSD-2020"
+},
+{
+  "_id": {
+    "$oid": "680b697d3d5f414697c08c7e"
+  },
+  "name": "Susil",
+  "email": "dummythree@gmail.com",
+  "mentor_id": {
+    "$oid": "680b70ac3d5f414697c08c8d"
+  },
+  "batch": "FSD-2020"
+}]
