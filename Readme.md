@@ -26,33 +26,33 @@ This project demonstrates working with a sample MongoDB database representing a 
 
 ## 📥 Steps to Import a Saved MongoDB Connection Using MongoDB Compass Follow the steps below to import a saved MongoDB connection into MongoDB Compass:
 
-- 1. Download the **compass-connections** Source File:
-     Download the **compass-connections** file to your computer.
+1. Download the **compass-connections** Source File:
+Download the **compass-connections** file to your computer.
 
-- 2. Open MongoDB Compass:
-     Launch the MongoDB Compass application on your device.
+2. Open MongoDB Compass:
+Launch the MongoDB Compass application on your device.
 
-- 3. Navigate to the Connection Section:
-     In the MongoDB Compass application, click on the "Connection" button at the top of the interface.
+3. Navigate to the Connection Section:
+In the MongoDB Compass application, click on the "Connection" button at the top of the interface.
 
-- 4. Import the Connection:
-     Click on the "Import Connection" button.
+4. Import the Connection:
+Click on the "Import Connection" button.
 
-- 5. Select the Saved Source File:
-     A popup titled "Import Saved Connection" will appear.
+5. Select the Saved Source File:
+A popup titled "Import Saved Connection" will appear.
 
-     Click the "Select a Downloaded Source File" button and navigate to the location where you downloaded the     **compass-connections** source file.
+Click the "Select a Downloaded Source File" button and navigate to the location where you downloaded the     **compass-connections** source file.
 
-- 6. Click Import:
-     After selecting the saved connection file, click the "Import" button.
+6. Click Import:
+After selecting the saved connection file, click the "Import" button.
 
-- 7. Use the Imported Database:
-     Once the connection is imported, you can now access and interact with the imported database in MongoDB Compass.
+7. Use the Imported Database:
+Once the connection is imported, you can now access and interact with the imported database in MongoDB Compass.
 
 ---
 
 ## ⚙ Running Queries on the Imported Database
-- Once the database is successfully imported, you can use the following sample queries to interact with the data:
+- Once the database is successfully imported, you can use the following sample queries **./queries.txt** to interact with the data:
 
 ---
 
