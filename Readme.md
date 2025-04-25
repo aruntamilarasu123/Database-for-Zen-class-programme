@@ -40,7 +40,6 @@ Click on the "Import Connection" button.
 
 5. Select the Saved Source File:
 A popup titled "Import Saved Connection" will appear.
-
 Click the "Select a Downloaded Source File" button and navigate to the location where you downloaded the     **compass-connections** source file.
 
 6. Click Import:
@@ -52,7 +51,7 @@ Once the connection is imported, you can now access and interact with the import
 ---
 
 ## ⚙ Running Queries on the Imported Database
-- Once the database is successfully imported, you can use the following sample queries **./queries.txt** to interact with the data:
+- Once the database is successfully imported, you can use the following sample queries to interact with the data:`https://github.com/aruntamilarasu123/Database-for-Zen-class-programme/blob/main/queries.txt`
 
 ---
 
